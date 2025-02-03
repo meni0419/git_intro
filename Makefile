@@ -37,10 +37,10 @@ else
 endif
 
 # Merge to master command
-merge_master:
+merge_main:
 ifeq ($(OS), Windows_NT)
 	for /f "delims=" %%b in ('git rev-parse --abbrev-ref HEAD') do set current_branch=%%b ^ \
-		&& git checkout master ^ \
+		&& git checkout main ^ \
 		&& git merge %%b -m "Merged %%b into master" ^ \
 		&& git push ^ \
 		&& git checkout %%b
