@@ -46,7 +46,7 @@ ifeq ($(OS), Windows_NT)
 		&& git checkout %%b
 else
 	current_branch=$$(git rev-parse --abbrev-ref HEAD) && \
-	git checkout master && \
+	git checkout main && \
 	git merge $$current_branch -m "Merged $$current_branch into master" && \
 	git push && \
 	git checkout $$current_branch
